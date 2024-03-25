@@ -13,10 +13,22 @@ const rl = readline.createInterface({
 
 // the function that will be called by the unit test below
 const rockPaperScissors = (hand1, hand2) => {
-
   // Write code here
   // Use the unit test to see what is expected
-
+  const choices = ["rock", "paper", "scissors"]
+  hand1 = hand1.toLowerCase().trim()
+  hand2 = hand2.toLowerCase().trim()
+  let hand1Num = choices.indexOf(hand1)
+  let hand2Num = choices.indexOf(hand2)
+  if (Math.abs(hand1Num - hand2Num) % 3 == 0) {
+    return "It's a tie!"
+  }
+  else if (Math.abs(hand1Num - hand2Num) % 3 == 1) {
+    return "Hand two wins!"
+  }
+  else {
+    return "Hand one wins!"
+  }
 }
 
 // the first function called in the program to get an input from the user
